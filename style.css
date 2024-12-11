@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#poke-container {
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    #poke-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+    #poke-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 801px) {
+    #poke-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+#pokemon {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#pokeImage {
+    width: 90%;
+    background: rgb(255, 237, 198);
+    background: radial-gradient(circle, rgba(255, 237, 198, 1) 0%, rgba(255, 228, 122, 1) 100%);
+    border-radius: 8px;
+}
+
+#pokeImage img {
+    width: 100%;
+}
+
+#pokeContent {
+    padding: 16px;
+}
+
+#pokeContent h4 {
+    text-transform: capitalize;
+    font-size: 1.2em;
+    margin: 0 0 8px;
+    padding-bottom: 15px;
+}
+
+#pokeContent ul {
+    margin: 4px 0;
+    padding: 0;
+    list-style: none;
+}
+
+#pokeContent ul li {
+    display: inline;
+}
+
+#pokeWeight {
+    text-align: right;
+}
+
+#pokeNumber::before {
+    content: "Code: ";
+    font-weight: bold;
+}
+
+ul::before {
+    content: "Type: ";
+    font-weight: bold;
+}
+
+ul li::after {
+    content: ", ";
+}
+
+ul li:last-child::after {
+    content: "";
+}
+
+#pokeHeight::before {
+    content: "Height: ";
+    font-weight: bold;
+}
+
+#pokeHeight::after {
+    content: "\00a0 m";
+}
+
+#pokeWeight::before {
+    content: "Weight: ";
+    font-weight: bold;
+}
+
+#pokeWeight::after {
+    content: "\00a0kg";
+}
